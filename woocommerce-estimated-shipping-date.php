@@ -49,7 +49,7 @@ final class Woocommerce_estimated_shipping_date {
     public function wc_esd_add_estimated_shipping_date() {
         woocommerce_wp_checkbox( array(
             'id'            => 'wc_esd_date_enable',
-            'label'         => __( 'Enable WC ESD', 'wcesd' ),
+            'label'         => __( 'Enable WC Estimated Date', 'wcesd' ),
             'description'   => __( 'Enable or Disable woocommerce estimated shipping date', 'wcesd' ),
             'desc_tip'      => true,
         ) );
@@ -58,13 +58,15 @@ final class Woocommerce_estimated_shipping_date {
             'label'         => __( 'Estimated Delivery Time in Days', 'wcesd' ),
             'description'   => __( 'Insert how many days it will take to delivar the product after purchase', 'wcesd' ),
             'desc_tip'      => true,
-            'type'          => 'number'
+            'type'          => 'number',
+            'placeholder'   => 5
         ) );
         woocommerce_wp_text_input( array(
             'id'            => 'wc_esd_date_message',
             'label'         => __( 'Estimated Delivery Date Message', 'wcesd' ),
             'description'   => __( 'Insert your message', 'wcesd' ),
             'desc_tip'      => true,
+            'placeholder'   => 'Estimated Delivery Date'
         ) );
     }
 
@@ -88,7 +90,7 @@ final class Woocommerce_estimated_shipping_date {
         if ( $wc_esd_date_enable !== 'yes' ) {
             return;
         }
-        
+
         $date                   = get_post_meta( get_the_ID(), 'wc_esd_date', true );
         $wc_esd_date            = date( wc_date_format(), strtotime( '+' . $date . 'days' ) );
         $wc_esd_date_message    = get_post_meta( get_the_ID(), 'wc_esd_date_message', true );
