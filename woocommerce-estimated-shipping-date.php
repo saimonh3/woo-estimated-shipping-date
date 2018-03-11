@@ -85,17 +85,17 @@ final class Woocommerce_estimated_shipping_date {
     }
 
     public function wc_esd_show_date() {
-        $wc_esd_date_enable     = get_post_meta( get_the_ID(), 'wc_esd_date_enable', true );
+		$wc_esd_date         = get_post_meta( get_the_ID(), 'wc_esd_date', true );
+        $wc_esd_date_enable  = get_post_meta( get_the_ID(), 'wc_esd_date_enable', true );
+		$wc_esd_date_message = get_post_meta( get_the_ID(), 'wc_esd_date_message', true );
 
-        if ( $wc_esd_date_enable !== 'yes' ) {
+        if ( $wc_esd_date_enable !== 'yes' || empty( $wc_esd_date ) || empty( $wc_esd_date_message ) ) {
             return;
         }
 
-        $date                   = get_post_meta( get_the_ID(), 'wc_esd_date', true );
-        $wc_esd_date            = date( wc_date_format(), strtotime( '+' . $date . 'days' ) );
-        $wc_esd_date_message    = get_post_meta( get_the_ID(), 'wc_esd_date_message', true );
+        $date = date( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
-        printf( esc_attr__( "%s: %s", "wcesd" ), $wc_esd_date_message, $wc_esd_date );
+        printf( esc_attr__( "%s: %s", "wcesd" ), $wc_esd_date_message, $date );
     }
 
 	public function is_request( $type ) {
