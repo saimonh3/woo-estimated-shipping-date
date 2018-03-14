@@ -80,13 +80,13 @@ final class Woocommerce_Estimated_Shipping_Date {
             return;
         }
 
-        $wc_esd_date_enable     = isset( $_POST['wc_esd_date_enable'] ) ? $_POST['wc_esd_date_enable'] : '';
-        $wc_esd_date            = isset( $_POST['wc_esd_date'] ) ? $_POST['wc_esd_date'] : '';
-        $wc_esd_date_message    = isset( $_POST['wc_esd_date_message'] ) ? $_POST['wc_esd_date_message'] : '';
+        $wc_esd_date_enable  = isset( $_POST['wc_esd_date_enable'] ) ? senitize_text_field( $_POST['wc_esd_date_enable'] ) : '';
+        $wc_esd_date         = isset( $_POST['wc_esd_date'] ) ? sanitize_text_field( $_POST['wc_esd_date'] ) : '';
+        $wc_esd_date_message = isset( $_POST['wc_esd_date_message'] ) ? sanitize_text_field( $_POST['wc_esd_date_message'] ) : '';
 
-        update_post_meta( $product_id, 'wc_esd_date_enable', esc_attr( $wc_esd_date_enable ) );
-        update_post_meta( $product_id, 'wc_esd_date', esc_attr( $wc_esd_date ) );
-        update_post_meta( $product_id, 'wc_esd_date_message', esc_attr( $wc_esd_date_message ) );
+        update_post_meta( $product_id, 'wc_esd_date_enable', $wc_esd_date_enable );
+        update_post_meta( $product_id, 'wc_esd_date', $wc_esd_date );
+        update_post_meta( $product_id, 'wc_esd_date_message', $wc_esd_date_message );
 
 		do_action( 'wc_esd_save_shipping_date', $product_id );
     }
