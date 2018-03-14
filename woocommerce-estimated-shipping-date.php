@@ -28,7 +28,7 @@ final class Woocommerce_Estimated_Shipping_Date {
 
 	public function define_constants() {
 		define( 'WC_ESD', plugin_dir_path( __FILE__ ) );
-        define( 'WC_ESD_ASSETS', plugin_dir_url( __FILE__ ) . 'assets/' );
+		define( 'WC_ESD_ASSETS', plugin_dir_url( __FILE__ ) . 'assets/' );
 	}
 
     public function init_hooks() {
@@ -86,14 +86,14 @@ final class Woocommerce_Estimated_Shipping_Date {
 
         update_post_meta( $product_id, 'wc_esd_date_enable', $wc_esd_date_enable );
         update_post_meta( $product_id, 'wc_esd_date', $wc_esd_date );
-        update_post_meta( $product_id, 'wc_esd_date_message', $wc_esd_date_message );
+		update_post_meta( $product_id, 'wc_esd_date_message', $wc_esd_date_message );
 
 		do_action( 'wc_esd_save_shipping_date', $product_id );
     }
 
     public function wc_esd_show_date() {
 		$wc_esd_date         = get_post_meta( get_the_ID(), 'wc_esd_date', true );
-        $wc_esd_date_enable  = get_post_meta( get_the_ID(), 'wc_esd_date_enable', true );
+		$wc_esd_date_enable  = get_post_meta( get_the_ID(), 'wc_esd_date_enable', true );
 		$wc_esd_date_message = get_post_meta( get_the_ID(), 'wc_esd_date_message', true );
 
         if ( $wc_esd_date_enable !== 'yes' || empty( $wc_esd_date ) || empty( $wc_esd_date_message ) ) {
@@ -114,14 +114,14 @@ final class Woocommerce_Estimated_Shipping_Date {
 		}
 
 		$wc_esd_date         = get_post_meta( $cart_item_key['product_id'], 'wc_esd_date', true );
-        $wc_esd_date_enable  = get_post_meta( $cart_item_key['product_id'], 'wc_esd_date_enable', true );
+		$wc_esd_date_enable  = get_post_meta( $cart_item_key['product_id'], 'wc_esd_date_enable', true );
 		$wc_esd_date_message = get_post_meta( $cart_item_key['product_id'], 'wc_esd_date_message', true );
 
         if ( $wc_esd_date_enable !== 'yes' || empty( $wc_esd_date ) || empty( $wc_esd_date_message ) ) {
             return;
         }
 
-        $date = date( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+    	$date = date( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
 		$cart_item .= '<br>';
 		$cart_item .= sprintf( wp_kses( __("<strong>%s %s</strong>", "wcesd" ), array( 'strong' => array() ) ), $wc_esd_date_message, $date );
@@ -139,7 +139,7 @@ final class Woocommerce_Estimated_Shipping_Date {
             return;
         }
 
-        $date = date( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+		$date = date( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
 		$cart_item .= '<br>';
 		$cart_item .= sprintf( wp_kses( __("<strong>%s %s</strong>", "wcesd" ), array( 'strong' => array() ) ), $wc_esd_date_message, $date );
@@ -150,14 +150,14 @@ final class Woocommerce_Estimated_Shipping_Date {
 
 	public function wc_esd_show_date_thankyou_page( $item_id, $item, $order ) {
 		$wc_esd_date         = get_post_meta( $item['product_id'], 'wc_esd_date', true );
-        $wc_esd_date_enable  = get_post_meta( $item['product_id'], 'wc_esd_date_enable', true );
+		$wc_esd_date_enable  = get_post_meta( $item['product_id'], 'wc_esd_date_enable', true );
 		$wc_esd_date_message = get_post_meta( $item['product_id'], 'wc_esd_date_message', true );
 
         if ( $wc_esd_date_enable !== 'yes' || empty( $wc_esd_date ) || empty( $wc_esd_date_message ) ) {
             return;
         }
 
-        $date = date( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+		$date = date( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
 		$massage = '<br>';
 		$massage .= sprintf( wp_kses( __("<strong>%s %s</strong>", "wcesd" ), array( 'strong' => array() ) ), $wc_esd_date_message, $date );
