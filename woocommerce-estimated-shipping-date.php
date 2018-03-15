@@ -80,7 +80,7 @@ final class Woocommerce_Estimated_Shipping_Date {
             return;
         }
 
-        $wc_esd_date_enable  = isset( $_POST['wc_esd_date_enable'] ) ? senitize_text_field( $_POST['wc_esd_date_enable'] ) : '';
+        $wc_esd_date_enable  = isset( $_POST['wc_esd_date_enable'] ) ? sanitize_text_field( $_POST['wc_esd_date_enable'] ) : '';
         $wc_esd_date         = isset( $_POST['wc_esd_date'] ) ? sanitize_text_field( $_POST['wc_esd_date'] ) : '';
         $wc_esd_date_message = isset( $_POST['wc_esd_date_message'] ) ? sanitize_text_field( $_POST['wc_esd_date_message'] ) : '';
 
