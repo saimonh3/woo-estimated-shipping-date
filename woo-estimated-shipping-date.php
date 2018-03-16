@@ -189,4 +189,4 @@ final class Woocommerce_Estimated_Shipping_Date {
 
 }
 
-add_action( 'plugins_loaded', array( 'Woocommerce_estimated_shipping_date', 'init' ) );
+add_action( 'plugins_loaded', array( 'Woocommerce_Estimated_Shipping_Date', 'init' ) );
