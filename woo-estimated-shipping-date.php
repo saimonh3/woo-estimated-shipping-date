@@ -4,7 +4,7 @@
 * Description: A simple WooCommerce based plugin to show the estimated shipping date on the product, cart, checkout page
 * Author: Mohammed Saimon
 * Author URI: https://saimonsplugins.com
-* Version: 3.0.1
+* Version: 3.0.2
 * Tested up to: 4.9.8
 * Requires PHP: 5.6
 * Text Domain: wcesd
@@ -17,7 +17,7 @@ if ( ! defined( 'WPINC' ) ) exit;
  * Woocommerce_Estimated_Shipping_Date Class
  */
 final class Woocommerce_Estimated_Shipping_Date {
-	protected $version = '3.0.1';
+	protected $version = '3.0.2';
 	private static $instance;
 
 	/**
@@ -25,6 +25,7 @@ final class Woocommerce_Estimated_Shipping_Date {
 	 */
 	public function __construct() {
 		$this->define_constants();
+		$this->init_hooks();
 
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
 		register_deactivation_hook( __FILE__, array( $this, 'deactivate' ) );
@@ -34,7 +35,7 @@ final class Woocommerce_Estimated_Shipping_Date {
 
 	/**
 	 * Define all the constants
-	 * 
+	 *
 	 * @return void
 	 */
 	public function define_constants() {
@@ -44,8 +45,26 @@ final class Woocommerce_Estimated_Shipping_Date {
 	}
 
 	/**
+	 * Init hooks
+	 *
+	 * @return void
+	 */
+	private function init_hooks() {
+		add_action( 'init', array( $this, 'load_text_domain' ) );
+	}
+
+    /**
+     * Initialize plugin for localization
+     *
+     * @uses load_plugin_textdomain()
+     */
+    public function load_text_domain() {
+        load_plugin_textdomain( 'wcesd', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+    }
+
+	/**
 	 * Include all the classes
-	 * 
+	 *
 	 * @return void
 	 */
 	public function includes() {
@@ -64,23 +83,23 @@ final class Woocommerce_Estimated_Shipping_Date {
 
 	/**
 	 * Get request type
-	 * 
+	 *
 	 * @param  string $type
-	 * 
+	 *
 	 * @return boolean
 	 */
 	public function request( $type ) {
-		switch ( $type ) {
-			case 'admin':
-				return is_admin();
-			case 'public':
-				return ! is_admin() && ! wp_doing_ajax();
-		}
+		$request = array(
+			'admin'  => is_admin(),
+			'public' => ! is_admin() && ! wp_doing_ajax()
+		);
+
+		return isset( $request[$type] ) ? $request[$type] : '';
 	}
 
 	/**
 	 * Get instance
-	 * 
+	 *
 	 * @return object
 	 */
 	public static function init() {
@@ -93,7 +112,7 @@ final class Woocommerce_Estimated_Shipping_Date {
 
 	/**
 	 * Plugin activate method
-	 * 
+	 *
 	 * @return void
 	 */
 	public function activate() {
@@ -107,7 +126,7 @@ final class Woocommerce_Estimated_Shipping_Date {
 
 	/**
 	 * Plugin deactivate method
-	 * 
+	 *
 	 * @return void
 	 */
 	public function deactivate() {
