@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * No cheating please
  */
@@ -10,7 +10,7 @@ if ( ! defined( 'WPINC' ) ) exit;
 class WCESD_Settings {
 	/**
 	 * Hold the instance
-	 * 
+	 *
 	 * @var string
 	 */
 	private static $instance;
@@ -35,7 +35,7 @@ class WCESD_Settings {
 
     /**
      * Init all the hooks
-     * 
+     *
      * @return void
      */
 	protected function init_hooks() {
@@ -98,16 +98,16 @@ class WCESD_Settings {
                     <span class="regen-sync-loader" style="display:none"></span>
                 </div>
             </div>
-        </div>  
-        <?php 
+        </div>
+        <?php
     }
 
 
     /**
      * Enqueue all the scripts
-     * 
+     *
      * @param  string $hook
-     * 
+     *
      * @return void
      */
 	function wc_esd_enqueue_scripts( $hook ) {
@@ -123,41 +123,41 @@ class WCESD_Settings {
 
     /**
      * Get wcesd settings fields
-     * 
+     *
      * @return string
      */
-    public function get_wcesd_settings() {   
+    public function get_wcesd_settings() {
         $settings = array(
             'wcesd_settings' => array(
                 array(
-                    'name'      => 'wcesd_enable',
-                    'label'     => __( 'Enable', 'wcesd' ),
-                    'desc'      => __( 'Enable WooCommerce Estimated Shipping Date.', 'wcesd' ),
-                    'type'      => 'checkbox',
-                    'options'   => array( 'on' ),
-                    'default'   => 'on'
+                    'name'    => 'wcesd_enable',
+                    'label'   => __( 'Enable', 'wcesd' ),
+                    'desc'    => __( 'Enable WooCommerce Estimated Shipping Date.', 'wcesd' ),
+                    'type'    => 'checkbox',
+                    'options' => array( 'on' ),
+                    'default' => 'on'
                 ),
                 array(
-                    'label'    => __( 'Enable Shipping Date for All Existing Product', 'wcesd' ),
-                    'desc'     => __( 'Enable Shipping for all existing product by default. If this option is not checked you will have to enable estimated shipping date for each individual product manually', 'wcesd' ),
-                    'name'     => 'wcesd_enable_all_products',
-                    'type'     => 'checkbox',
-                    'options'  => array( 'on', 'off' ),
-                    'default'  => 'on',
+                    'label'   => __( 'Enable Shipping Date for All Existing Product', 'wcesd' ),
+                    'desc'    => __( 'Enable Shipping for all existing product by default. If this option is not checked you will have to enable estimated shipping date for each individual product manually', 'wcesd' ),
+                    'name'    => 'wcesd_enable_all_products',
+                    'type'    => 'checkbox',
+                    'options' => array( 'on', 'off' ),
+                    'default' => 'on',
                 ),
                 array(
-                    'name'          => 'wc_esd_date_default',
-                    'label'         => __( 'Estimated Delivery Time in Days', 'wcesd' ),
-                    'desc'   => __( 'Insert how many days it will take to deliver the product after purchase', 'wcesd' ),
-                    'type'          => 'number',
-                    'default'       => 5
+                    'name'    => 'wc_esd_date_default',
+                    'label'   => __( 'Estimated Delivery Time in Days', 'wcesd' ),
+                    'desc'    => __( 'Insert how many days it will take to deliver the product after purchase', 'wcesd' ),
+                    'type'    => 'number',
+                    'default' => 5
                 ),
                 array(
-                    'name'            => 'wc_esd_date_message_default',
-                    'label'         => __( 'Estimated Delivery Date Message', 'wcesd' ),
-                    'desc'   => __( 'Insert your message', 'wcesd' ),
-                    'type'          => 'text',
-                    'default'       => 'Estimated Delivery Date',
+                    'name'    => 'wc_esd_date_message_default',
+                    'label'   => __( 'Estimated Delivery Date Message', 'wcesd' ),
+                    'desc'    => __( 'Insert your message', 'wcesd' ),
+                    'type'    => 'text',
+                    'default' => 'Estimated Delivery Date',
                 ),
             )
         );
@@ -167,7 +167,7 @@ class WCESD_Settings {
 
     /**
      * Enable wcesd for all product
-     * 
+     *
      * @return void
      */
     public function enable_wcesd_for_all_product() {
@@ -182,7 +182,7 @@ class WCESD_Settings {
         $limit          = $_POST['limit'];
         $offset         = $_POST['offset'];
         $total_products = isset( $_POST['total_products'] ) ? $_POST['total_products'] : 0;
-  
+
     	if ( ! is_admin() ) {
     		return;
     	}
@@ -228,7 +228,7 @@ class WCESD_Settings {
 	    		update_post_meta( $product, 'wc_esd_date', $wc_esd_date_default );
 	    		update_post_meta( $product, 'wc_esd_date_message', $wc_esd_date_message_default );
 	    	}
-	    	
+
 	    	$done           = count( $products );
 	    	$total_products = count( $total_products );
 
@@ -243,13 +243,13 @@ class WCESD_Settings {
                 'offset'  => 0,
                 'done'    => 'All',
                 'message' => sprintf( __( 'WooCommerce estimated shipping date has been applied to all products.', 'wcesd' ) )
-            ) );	
+            ) );
 		}
     }
 
     /**
      * Get instance
-     * 
+     *
      * @return object
      */
 	public static function init() {
@@ -262,7 +262,7 @@ class WCESD_Settings {
 
     /**
      * Disable cloning this class
-     * 
+     *
      * @return void
      */
 	private function __clone() {
