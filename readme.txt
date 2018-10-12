@@ -15,8 +15,6 @@ A simple WooCommerce based plugin to show the estimated shipping date on the pro
 
 This plugin will allow you to insert how many days it will take to deliver the product to your customer once it’s purchased. Once you set the required days, it will show up on the individual product page, cart page, checkout page, customer order page and also in their email.
 
-> Get the [**Pro Version**](https://saimonsplugins.com/plugins/woo-estimated-shipping-date-pro) which supports Dokan Multi Vendor Plugin.
-
 This way your potential customers will get to know how long will it take to receive the intend product and it will greatly help your potential customers to being paid customers.
 
 == Installation ==
@@ -48,7 +46,7 @@ You will have to set the estimated shipping date on the product edit page
 4. Individual Product Page
 5. Checkout Page
 6. Order Received Page
-7. Email 
+7. Email
 
 == Changelog ==
 

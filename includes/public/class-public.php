@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * No cheating please
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'WPINC' ) ) exit;
 class WCESD_Public {
 	/**
 	 * Hold the instance
-	 * 
+	 *
 	 * @var string
 	 */
 	private static $instance;
@@ -27,7 +27,7 @@ class WCESD_Public {
 
 	/**
 	 * Init all the hooks
-	 * 
+	 *
 	 * @return void
 	 */
 	private function init_hooks() {
@@ -68,7 +68,7 @@ class WCESD_Public {
 			return;
 		}
 
-		$date = date( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+		$date = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
 		printf(
 			wp_kses( __("<strong class='shipping-date'> %s %s</strong>", "wcesd" ), array( 'strong' => array( 'class' => true ) ) ),
@@ -95,7 +95,7 @@ class WCESD_Public {
 			return;
 		}
 
-		$date = date( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+		$date = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
 		$cart_item .= '<br>';
 		$cart_item .= sprintf( wp_kses( __("<strong>%s %s</strong>", "wcesd" ), array( 'strong' => array() ) ), $wc_esd_date_message, $date );
@@ -119,7 +119,7 @@ class WCESD_Public {
 			return;
 		}
 
-		$date = date( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+		$date = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
 		$cart_item .= '<br>';
 		$cart_item .= sprintf( wp_kses( __("<strong>%s %s</strong>", "wcesd" ), array( 'strong' => array() ) ), $wc_esd_date_message, $date );
@@ -130,7 +130,7 @@ class WCESD_Public {
 
 	/**
 	 * wc_esd_show_date_thankyou_page
-	 * 
+	 *
 	 * @param  [type] $item_id [description]
 	 * @param  [type] $item    [description]
 	 * @param  [type] $order   [description]
@@ -145,7 +145,7 @@ class WCESD_Public {
 			return;
 		}
 
-		$date = date( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+		$date = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
 		$massage = '<br>';
 		$massage .= sprintf( wp_kses( __("<strong>%s %s</strong>", "wcesd" ), array( 'strong' => array() ) ), $wc_esd_date_message, $date );
@@ -156,7 +156,7 @@ class WCESD_Public {
 
     /**
      * Get instance
-     * 
+     *
      * @return object
      */
 	public static function init() {
@@ -169,7 +169,7 @@ class WCESD_Public {
 
     /**
      * Disable cloning this class
-     * 
+     *
      * @return void
      */
 	private function __clone() {
