@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * No cheating please
  */
@@ -10,7 +10,7 @@ if ( ! defined( 'WPINC' ) ) exit;
 class WCESD_Product_Settings {
 	/**
 	 * Hold the instance
-	 * 
+	 *
 	 * @var string
 	 */
 	private static $instance;
@@ -32,17 +32,17 @@ class WCESD_Product_Settings {
 
 	/**
 	 * Init all the hooks
-	 * 
+	 *
 	 * @return void
 	 */
 	protected function init_hooks() {
 		add_action( 'woocommerce_product_options_shipping', array( $this, 'wc_esd_add_estimated_shipping_date' ) );
-		add_action( 'woocommerce_process_product_meta', array( $this, 'wc_esd_save_shipping_date') );		
+		add_action( 'woocommerce_process_product_meta', array( $this, 'wc_esd_save_shipping_date') );
 	}
 
 	/**
 	 * Add wcesd form
-	 * 
+	 *
 	 * @return void
 	 */
 	public function wc_esd_add_estimated_shipping_date() {
@@ -59,7 +59,6 @@ class WCESD_Product_Settings {
 			'desc_tip'      => true,
 			'type'          => 'number',
 			'placeholder'   => 5,
-			'value'		    => 5,
 		) );
 		woocommerce_wp_text_input( array(
 			'id'            => 'wc_esd_date_message',
@@ -67,7 +66,6 @@ class WCESD_Product_Settings {
 			'description'   => __( 'Insert your message', 'wcesd' ),
 			'desc_tip'      => true,
 			'placeholder'   => 'Estimated Delivery Date',
-			'value'		    => 'Estimated Delivery Date',
 		) );
 
 		do_action( 'wc_esd_add_estimated_shipping_date' );
@@ -75,9 +73,9 @@ class WCESD_Product_Settings {
 
 	/**
 	 * Save wcesd form data
-	 * 
+	 *
 	 * @param  int $product_id
-	 * 
+	 *
 	 * @return void
 	 */
 	public function wc_esd_save_shipping_date( $product_id ) {
@@ -98,7 +96,7 @@ class WCESD_Product_Settings {
 
 	/**
 	 * Get instance
-	 * 
+	 *
 	 * @return object
 	 */
 	public static function init() {
@@ -111,7 +109,7 @@ class WCESD_Product_Settings {
 
 	/**
 	 * Disable cloning this class
-	 * 
+	 *
 	 * @return void
 	 */
 	private function __clone() {

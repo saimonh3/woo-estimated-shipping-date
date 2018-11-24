@@ -11,7 +11,7 @@
 * License: GPLv2 or later
 **/
 
-if ( ! defined( 'WPINC' ) ) exit;
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Woocommerce_Estimated_Shipping_Date Class

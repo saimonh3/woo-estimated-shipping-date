@@ -92,7 +92,7 @@ class WCESD_Public {
 		$wc_esd_date_message = get_post_meta( $cart_item_key['product_id'], 'wc_esd_date_message', true );
 
 		if ( $wc_esd_date_enable !== 'yes' || empty( $wc_esd_date ) || empty( $wc_esd_date_message ) ) {
-			return;
+			return $cart_item;
 		}
 
 		$date = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
@@ -116,7 +116,7 @@ class WCESD_Public {
 		$wc_esd_date_message = get_post_meta( $cart_item_key['product_id'], 'wc_esd_date_message', true );
 
 		if ( $wc_esd_date_enable !== 'yes' || empty( $wc_esd_date ) || empty( $wc_esd_date_message ) ) {
-			return;
+			return $cart_item;
 		}
 
 		$date = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
