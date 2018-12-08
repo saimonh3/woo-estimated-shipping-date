@@ -74,33 +74,11 @@ final class Woocommerce_Estimated_Shipping_Date {
 		if ( $this->request( 'admin' ) ) {
 			require_once WC_ESD_INC . '/admin/class-settings.php';
 			require_once WC_ESD_INC . '/admin/class-product-settings.php';
-
-			if ( $this->has_dokan() ) {
-				require_once WC_ESD_INC . '/admin/class-dokan-settings.php';
-			}
-
 		}
 
 		if ( $this->request( 'public' ) ) {
 			require_once WC_ESD_INC . '/public/class-public.php';
-
-			if ( $this->has_dokan() ) {
-				require_once WC_ESD_INC . '/public/class-dokan.php';
-			}
 		}
-	}
-
-	/**
-	 * Check if dokan is installed
-	 *
-	 * @return boolean
-	 */
-	public function has_dokan() {
-		if ( ! function_exists( 'dokan' ) ) {
-			return false;
-		}
-
-		return true;
 	}
 
 	/**
