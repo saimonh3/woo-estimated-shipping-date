@@ -3,7 +3,7 @@ Contributors: saimonh
 Donate link: https://saimonsplugins.com/donate
 Tags: woocommerce, estimated shipping date, delivery date, estimated delivery date, shipping date, shipping time, delivery time
 Requires at least: 4.0
-Tested up to: 4.9.8
+Tested up to: 5.2.2
 Stable tag: trunk
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -49,6 +49,13 @@ You will have to set the estimated shipping date on the product edit page
 7. Email
 
 == Changelog ==
+v3.0.4 -> Aug 13, 2019
+------------------------
+-   **Fix*** Remove default shipping date settings value
 
+v3.0.3 -> Oct 12, 2018
+------------------------
+-   **New*** Dokan multivendor plugin support
+-   **Fix*** date format internalization
 
 == Upgrade Notice ==

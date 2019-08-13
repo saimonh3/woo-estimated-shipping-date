@@ -1,0 +1,8 @@
+v3.0.4 -> Aug 13, 2019
+------------------------
+-   **Fix*** Remove default shipping date settings value
+
+v3.0.3 -> Oct 12, 2018
+------------------------
+-   **New*** Dokan multivendor plugin support
+-   **Fix*** date format internalization
