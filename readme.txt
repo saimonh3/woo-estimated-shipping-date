@@ -4,8 +4,8 @@ Tags: woocommerce, estimated shipping date, delivery date, estimated delivery da
 Requires at least: 4.0
 Tested up to: 5.4.2
 WC tested up to: 4.2.0
-Stable tag: trunk
-Requires PHP: 5.6
+Stable tag: 3.0.6
+Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,3 +64,14 @@ v3.0.3 -> Oct 12, 2018
 -   **Fix*** date format internalization
 
 == Upgrade Notice ==
+
+
+
+## Privacy Policy
+WooCommerce Estimated Shipping Date uses [Appsero](https://appsero.com) SDK to collect some telemetry data upon user's confirmation. This helps us to troubleshoot problems faster & make product improvements.
+
+Appsero SDK **does not gather any data by default.** The SDK only starts gathering basic telemetry data **when a user allows it via the admin notice**. We collect the data to ensure a great user experience for all our users.
+
+Integrating Appsero SDK **DOES NOT IMMEDIATELY** start gathering data, **without confirmation from users in any case.**
+
+Learn more about how [Appsero collects and uses this data](https://appsero.com/privacy-policy/).

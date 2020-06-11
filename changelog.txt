@@ -1,4 +1,4 @@
-v3.0.5 -> June 11, 2020
+v3.0.6 -> June 11, 2020
 ------------------------
 -   **Fix*** If shipping date or shipping date message is not inserted, use the default settings
 
