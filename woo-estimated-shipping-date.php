@@ -1,15 +1,16 @@
 <?php
 /**
-* Plugin Name: WooCommerce Estimated Shipping Date
-* Description: A simple WooCommerce based plugin to show the estimated shipping date on the product, cart, checkout page
-* Author: Mohammed Saimon
-* Author URI: https://saimonsplugins.com
-* Version: 3.0.4
-* Tested up to: 5.2.2
-* Requires PHP: 5.6
-* Text Domain: wcesd
-* License: GPLv2 or later
-**/
+ * Plugin Name: WooCommerce Estimated Shipping Date
+ * Description: A simple WooCommerce based plugin to show the estimated shipping date on the product, cart, checkout page
+ * Author: Mohammed Saimon
+ * Author URI: https://saimonsplugins.com
+ * Version: 3.0.4
+ * Tested up to: 5.2.2
+ * WC tested up to: 4.2.0
+ * Requires PHP: 7.0
+ * Text Domain: wcesd
+ * License: GPLv2 or later
+ */
 
 defined( 'ABSPATH' ) || exit;
 
@@ -136,5 +137,3 @@ final class Woocommerce_Estimated_Shipping_Date {
 }
 
 add_action( 'plugins_loaded', array( 'Woocommerce_Estimated_Shipping_Date', 'init' ) );
-
-
