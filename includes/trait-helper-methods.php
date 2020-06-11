@@ -17,9 +17,7 @@ if ( ! trait_exists( 'helperMethods' ) ) {
 		 * @return boolean
 		 */
 		public function enabled() {
-			$settings = $this->wcesd_get_option( 'wcesd_enable', 'wcesd_settings' );
-
-			return $settings === 'on' ? true : false;
+			return 'on' === $this->wcesd_get_option( 'wcesd_enable', 'wcesd_settings' );
 		}
 
 		/**
@@ -46,9 +44,7 @@ if ( ! trait_exists( 'helperMethods' ) ) {
 		 * @return boolean
 		 */
 		public function enabled_for_all_products() {
-			$settings = $this->wcesd_get_option( 'wcesd_enable_all_products', 'wcesd_settings' );
-
-			return $settings === 'on' ? true : false;
+			return 'on' === $this->wcesd_get_option( 'wcesd_enable_all_products', 'wcesd_settings' );
 		}
 
 		/**
@@ -59,7 +55,6 @@ if ( ! trait_exists( 'helperMethods' ) ) {
 		 * @return array ids
 		 */
 		public function get_author_ids_by_capability( $capability ) {
-
 			if ( ! $capability ) {
 				$capability = 'manage_woocommerce';
 			}
