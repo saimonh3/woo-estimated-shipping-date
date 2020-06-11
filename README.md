@@ -1,11 +1,18 @@
 # WooCommerce Estimated Shipping Date
-**Contributors:** [saimonh](https://profiles.wordpress.org/saimonh)
-**Tags:** WooCommerce multivendor marketplace, multi vendor marketplace, multi seller store, product vendors, woocommerce vendor, commission rate, e-commerce, ebay, ecommerce, yith, yithemes  
-**Requires at least:** 4.0
-**Tested up to:** 5.4.2
+
+**Contributors:** [saimonh](https://profiles.wordpress.org/saimonh)  
+**Tags:**: woocommerce, estimated shipping date, delivery date, estimated delivery date, shipping date, shipping time, delivery time
+
+**Requires at least:** 4.0  
+**Tested up to:** 5.4.2  
 **WC requires at least:** 3.0  
+<<<<<<< HEAD
 **WC tested up to:** 4.2.0
 **Requires PHP:** 7.0 
+=======
+**WC tested up to:** 4.2.0  
+**Requires PHP:** 7.0  
+>>>>>>> 398cf3a2890d6c304f33efe72d53016f12bd414e
 **Stable tag:** 3.0.6  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
