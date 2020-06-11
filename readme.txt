@@ -1,9 +1,9 @@
 === WooCommerce Estimated Shipping Date ===
 Contributors: saimonh
-Donate link: https://saimonsplugins.com/donate
 Tags: woocommerce, estimated shipping date, delivery date, estimated delivery date, shipping date, shipping time, delivery time
 Requires at least: 4.0
-Tested up to: 5.2.2
+Tested up to: 5.4.2
+WC tested up to: 4.2.0
 Stable tag: trunk
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -49,6 +49,11 @@ You will have to set the estimated shipping date on the product edit page
 7. Email
 
 == Changelog ==
+
+v3.0.5 -> June 11, 2020
+------------------------
+-   **Fix*** If shipping date or shipping date message is not inserted, use the default settings
+
 v3.0.4 -> Aug 13, 2019
 ------------------------
 -   **Fix*** Remove default shipping date settings value
