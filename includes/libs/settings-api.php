@@ -652,7 +652,6 @@ class WeDevs_Settings_API {
         <?php
         endif;
     }
-
 }
 
 endif;

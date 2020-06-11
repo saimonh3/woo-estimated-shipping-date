@@ -49,7 +49,7 @@ class WCESD_Product_Settings {
 		woocommerce_wp_checkbox( array(
 			'id'            => 'wc_esd_date_enable',
 			'label'         => __( 'Enable WC Estimated Date', 'wcesd' ),
-			'description'   => __( 'Enable or Disable woocommerce estimated shipping date', 'wcesd' ),
+			'description'   => __( 'Enable or Disable WooCommerce estimated shipping date', 'wcesd' ),
 			'desc_tip'      => true,
 		) );
 		woocommerce_wp_text_input( array(
@@ -65,7 +65,7 @@ class WCESD_Product_Settings {
 			'label'         => __( 'Estimated Delivery Date Message', 'wcesd' ),
 			'description'   => __( 'Insert your message', 'wcesd' ),
 			'desc_tip'      => true,
-			'placeholder'   => 'Estimated Delivery Date',
+			'placeholder'   => __( 'Estimated Delivery Date', 'wcesd' ),
 		) );
 
 		do_action( 'wc_esd_add_estimated_shipping_date' );

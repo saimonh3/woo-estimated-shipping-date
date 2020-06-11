@@ -64,14 +64,25 @@ class WCESD_Public {
 		$wc_esd_date_enable  = get_post_meta( get_the_ID(), 'wc_esd_date_enable', true );
 		$wc_esd_date_message = get_post_meta( get_the_ID(), 'wc_esd_date_message', true );
 
-		if ( $wc_esd_date_enable !== 'yes' || empty( $wc_esd_date ) || empty( $wc_esd_date_message ) ) {
+		if ( empty( $wc_esd_date ) ) {
+			$wc_esd_date = 5;
+		}
+
+		if ( empty( $wc_esd_date_message ) ) {
+			$wc_esd_date_message = __( 'Estimated Delivery Date', 'wcesd' );
+		}
+
+		if ( 'yes' !== $wc_esd_date_enable || empty( $wc_esd_date ) ) {
 			return;
 		}
 
 		$date = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
 		printf(
-			wp_kses( __("<strong class='shipping-date'> %s %s</strong>", "wcesd" ), array( 'strong' => array( 'class' => true ) ) ),
+			wp_kses(
+				__( "<strong class='shipping-date'> %s %s</strong>", "wcesd" ),
+				array( 'strong' => array( 'class' => true ) )
+			),
 			$wc_esd_date_message, $date
 		);
 	}
@@ -91,7 +102,15 @@ class WCESD_Public {
 		$wc_esd_date_enable  = get_post_meta( $cart_item_key['product_id'], 'wc_esd_date_enable', true );
 		$wc_esd_date_message = get_post_meta( $cart_item_key['product_id'], 'wc_esd_date_message', true );
 
-		if ( $wc_esd_date_enable !== 'yes' || empty( $wc_esd_date ) || empty( $wc_esd_date_message ) ) {
+		if ( empty( $wc_esd_date ) ) {
+			$wc_esd_date = 5;
+		}
+
+		if ( empty( $wc_esd_date_message ) ) {
+			$wc_esd_date_message = __( 'Estimated Delivery Date', 'wcesd' );
+		}
+
+		if ( 'yes' !== $wc_esd_date_enable ) {
 			return $cart_item;
 		}
 
@@ -115,7 +134,15 @@ class WCESD_Public {
 		$wc_esd_date_enable  = get_post_meta( $cart_item_key['product_id'], 'wc_esd_date_enable', true );
 		$wc_esd_date_message = get_post_meta( $cart_item_key['product_id'], 'wc_esd_date_message', true );
 
-		if ( $wc_esd_date_enable !== 'yes' || empty( $wc_esd_date ) || empty( $wc_esd_date_message ) ) {
+		if ( empty( $wc_esd_date ) ) {
+			$wc_esd_date = 5;
+		}
+
+		if ( empty( $wc_esd_date_message ) ) {
+			$wc_esd_date_message = __( 'Estimated Delivery Date', 'wcesd' );
+		}
+
+		if ( 'yes' !== $wc_esd_date_enable ) {
 			return $cart_item;
 		}
 
@@ -141,7 +168,15 @@ class WCESD_Public {
 		$wc_esd_date_enable  = get_post_meta( $item['product_id'], 'wc_esd_date_enable', true );
 		$wc_esd_date_message = get_post_meta( $item['product_id'], 'wc_esd_date_message', true );
 
-		if ( $wc_esd_date_enable !== 'yes' || empty( $wc_esd_date ) || empty( $wc_esd_date_message ) ) {
+		if ( empty( $wc_esd_date ) ) {
+			$wc_esd_date = 5;
+		}
+
+		if ( empty( $wc_esd_date_message ) ) {
+			$wc_esd_date_message = __( 'Estimated Delivery Date', 'wcesd' );
+		}
+
+		if ( 'yes' !== $wc_esd_date_enable ) {
 			return;
 		}
 
