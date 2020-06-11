@@ -5,6 +5,7 @@
  * Author: Mohammed Saimon
  * Version: 3.0.5
  * Tested up to: 5.4.2
+ * WC requires at least:
  * WC tested up to: 4.2.0
  * Requires PHP: 7.0
  * Text Domain: wcesd
@@ -25,6 +26,7 @@ final class Woocommerce_Estimated_Shipping_Date {
 	 */
 	public function __construct() {
 		$this->define_constants();
+		$this->load_appsero();
 		$this->init_hooks();
 
 		register_activation_hook( __FILE__, array( $this, 'activate' ) );
@@ -42,6 +44,33 @@ final class Woocommerce_Estimated_Shipping_Date {
 		define( 'WC_ESD', plugin_dir_path( __FILE__ ) );
 		define( 'WC_ESD_INC', plugin_dir_path( __FILE__ ) . 'includes' );
 		define( 'WC_ESD_ASSETS', plugin_dir_url( __FILE__ ) . 'assets/' );
+	}
+
+	/**
+	 * Load appsero client
+	 *
+	 * @since 3.0.5
+	 *
+	 * @return void
+	 */
+	public function load_appsero() {
+		$this->appsero_init_tracker_woo_estimated_shipping_date();
+	}
+
+	/**
+	 * Initialize the plugin tracker
+	 *
+	 * @return void
+	 */
+	function appsero_init_tracker_woo_estimated_shipping_date() {
+		if ( ! class_exists( 'Appsero\Client' ) ) {
+			require_once __DIR__ . '/appsero/src/Client.php';
+		}
+
+		$client = new Appsero\Client( 'cb89d144-7d16-4036-817a-c38653c19b05', 'WooCommerce Estimated Shipping Date', __FILE__ );
+
+		// Active insights
+		$client->insights()->init();
 	}
 
 	/**
