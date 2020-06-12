@@ -14,7 +14,12 @@ final class Base {
 	}
 
 	private static function bootstrap() {
+		add_action( 'init', [ self::class, 'load_text_domain' ] );
 		add_action( 'woocommerce_loaded', [ self::class, 'set_controllers' ] );
+	}
+
+	public static function load_text_domain() {
+		load_plugin_textdomain( 'wcesd', false, dirname( plugin_basename( WC_ESD_FILE ) ) . '/languages/' );
 	}
 
 	public static function set_controllers() {

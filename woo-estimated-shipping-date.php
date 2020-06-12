@@ -13,7 +13,7 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-defined( 'WC_ESD' ) || define( 'WC_ESD_FILE', __FILE__ );
+defined( 'WC_ESD_FILE' ) || define( 'WC_ESD_FILE', __FILE__ );
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -34,4 +34,5 @@ function wcesd() {
 	appsero_tracker();
 }
 
+// kick off
 wcesd();
