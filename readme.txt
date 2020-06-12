@@ -37,8 +37,6 @@ You will have to set the estimated shipping date on the product edit page
 =  =
 
 
-
-
 == Screenshots ==
 1. Settings Page
 2. Settings Options Under Product Edit Page
@@ -49,7 +47,7 @@ You will have to set the estimated shipping date on the product edit page
 7. Email
 
 == Changelog ==
-v4.0.0 -> June 12, 2020
+v4.0.1 -> June 12, 2020
 ------------------------
 -   **Feat*** Allow adding shipping date for all the product at once
 -   **Tweak*** Rewrite the whole plugin
