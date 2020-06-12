@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Estimated Shipping Date
  * Description: A simple WooCommerce based plugin to show the estimated shipping date on the product, cart, checkout page
  * Author: Mohammed Saimon
- * Version: 3.0.6
+ * Version: 3.0.7
  * Tested up to: 5.4.2
  * WC requires at least:
  * WC tested up to: 4.2.0
@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
  * Woocommerce_Estimated_Shipping_Date Class
  */
 final class Woocommerce_Estimated_Shipping_Date {
-	protected $version = '3.0.6';
+	protected $version = '3.0.7';
 	private static $instance;
 
 	/**
@@ -64,13 +64,17 @@ final class Woocommerce_Estimated_Shipping_Date {
 	 */
 	function appsero_init_tracker_woo_estimated_shipping_date() {
 		if ( ! class_exists( 'Appsero\Client' ) ) {
-			require_once __DIR__ . '/appsero/src/Client.php';
+			$file = '/appsero-client/src/Client.php';
+
+			if ( file_exists( $file ) ) {
+				require_once __DIR__ . '/appsero-client/src/Client.php';
+			}
 		}
 
-		$client = new Appsero\Client( 'cb89d144-7d16-4036-817a-c38653c19b05', 'WooCommerce Estimated Shipping Date', __FILE__ );
-
-		// Active insights
-		$client->insights()->init();
+		if ( class_exists( 'Appsero\Clien' ) ) {
+			$client = new Appsero\Client( 'cb89d144-7d16-4036-817a-c38653c19b05', 'WooCommerce Estimated Shipping Date', __FILE__ );
+			$client->insights()->init();
+		}
 	}
 
 	/**

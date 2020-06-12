@@ -1,3 +1,7 @@
+v3.0.7 -> June 12, 2020
+------------------------
+-   **Fix*** Fatal error due to Appsero file not found
+
 v3.0.6 -> June 11, 2020
 ------------------------
 -   **Fix*** If shipping date or shipping date message is not inserted, use the default settings
