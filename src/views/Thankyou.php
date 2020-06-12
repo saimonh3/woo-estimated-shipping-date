@@ -1,0 +1,36 @@
+<?php
+
+namespace Saimon\WCESD\Views;
+
+use Saimon\WCESD\Helper;
+
+defined( 'ABSPATH' ) || exit;
+
+class Thankyou {
+
+	public function __construct() {
+		$this->hooks();
+	}
+
+	private function hooks() {
+		add_action( 'woocommerce_order_item_meta_start', [ self::class, 'show_date' ], 10, 2 );
+	}
+
+	public static function show_date( $cart_item, $cart_item_key ) {
+		if ( 'yes' !== Helper::get_option( 'wc_esd_date_enable', $cart_item_key['product_id'] ) ) {
+			return $cart_item;
+		}
+
+		$wc_esd_date         = Helper::get_option( 'wc_esd_date', $cart_item_key['product_id'] );
+		$wc_esd_date         = $wc_esd_date ? $wc_esd_date : 5;
+		$wc_esd_date_message = Helper::get_option( 'wc_esd_date_message', $cart_item_key['product_id'] );
+		$wc_esd_date_message = $wc_esd_date_message ? $wc_esd_date_message : __( 'Estimated Delivery Date', 'wcesd' );
+		$date                = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+
+		$message = '<br>';
+		$message .= sprintf( wp_kses( __("<strong>%s %s</strong>", "wcesd" ), array( 'strong' => array() ) ), $wc_esd_date_message, $date );
+		$message .= '</br>';
+
+		echo $message;
+	}
+}
