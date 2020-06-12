@@ -1,3 +1,8 @@
+v4.0.0 -> June 12, 2020
+------------------------
+-   **Feat*** Allow adding shipping date for all the product at once
+-   **Tweak*** Rewrite the whole plugin
+
 v3.0.7 -> June 12, 2020
 ------------------------
 -   **Tweak*** Rename appsero-client to appsero

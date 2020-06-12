@@ -1,0 +1,20 @@
+{
+    "name": "saimon/woo-estimated-shipping-date",
+    "description": "A simple WooCommerce based plugin to show the estimated shipping date on the product, cart, checkout page",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "saimonh3",
+            "email": "saimon2721@gmail.com"
+        }
+    ],
+    "require": {
+        "tareq1988/wordpress-settings-api-class": "dev-master",
+        "appsero/client": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Saimon\\WCESD\\": "src/"
+        }
+    }
+}

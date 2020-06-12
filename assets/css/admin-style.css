@@ -1,0 +1,46 @@
+strong.shipping-date {
+    border: 1.5px dashed #808080c9;
+    padding: 5px 5px;
+}
+
+.wcesd.postbox {
+    padding: 10px 20px;
+}
+
+.wcesd.postbox h3 {
+    padding-left: 12px;
+}
+
+.regen-sync-response span, .duplicate-search-response span {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: block;
+}
+.regen-sync-loader, .duplicate-sync-loader {
+    background: url('../images/spinner-2x.gif') no-repeat;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: cover;
+}
+
+#progressbar,#duplicate-progressbar{
+    background-color: #EEE;
+    border-radius: 13px; /* (height of inner div) / 2 + padding */
+    padding: 3px;
+    margin-bottom : 20px;
+}
+
+#regen-pro,#duplicate-pro{
+    background-color: #00A0D2;
+    width: 0%; /* Adjust with JavaScript */
+    height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color:#FFF;
+}

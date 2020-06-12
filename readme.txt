@@ -4,7 +4,7 @@ Tags: woocommerce, estimated shipping date, delivery date, estimated delivery da
 Requires at least: 4.0
 Tested up to: 5.4.2
 WC tested up to: 4.2.0
-Stable tag: 3.0.8
+Stable tag: 4.0.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -49,8 +49,20 @@ You will have to set the estimated shipping date on the product edit page
 7. Email
 
 == Changelog ==
+v4.0.0 -> June 12, 2020
+------------------------
+-   **Feat*** Allow adding shipping date for all the product at once
+-   **Tweak*** Rewrite the whole plugin
 
-v3.0.5 -> June 11, 2020
+v3.0.7 -> June 12, 2020
+------------------------
+-   **Tweak*** Rename appsero-client to appsero
+
+v3.0.7 -> June 12, 2020
+------------------------
+-   **Fix*** Fatal error due to Appsero file not found
+
+v3.0.6 -> June 11, 2020
 ------------------------
 -   **Fix*** If shipping date or shipping date message is not inserted, use the default settings
 
@@ -60,7 +72,6 @@ v3.0.4 -> Aug 13, 2019
 
 v3.0.3 -> Oct 12, 2018
 ------------------------
--   **New*** Dokan multivendor plugin support
 -   **Fix*** date format internalization
 
 == Upgrade Notice ==
