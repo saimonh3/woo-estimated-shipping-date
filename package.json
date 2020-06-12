@@ -1,6 +1,6 @@
 {
   "name": "Woo Estimated Shipping Date",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "A simple WooCommerce based plugin to show the estimated shipping date on the product, cart, checkout page",
   "author": "Mohammed Saimon",
   "license": "GPL",
