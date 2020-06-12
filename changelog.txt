@@ -1,4 +1,4 @@
-v4.0.0 -> June 12, 2020
+v4.0.1 -> June 12, 2020
 ------------------------
 -   **Feat*** Allow adding shipping date for all the product at once
 -   **Tweak*** Rewrite the whole plugin
