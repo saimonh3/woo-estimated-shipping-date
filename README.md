@@ -8,7 +8,7 @@
 **WC requires at least:** 3.0
 **WC tested up to:** 4.2.0  
 **Requires PHP:** 7.0  
-**Stable tag:** 3.0.8  
+**Stable tag:** 4.0.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
