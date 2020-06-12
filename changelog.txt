@@ -1,5 +1,9 @@
 v3.0.7 -> June 12, 2020
 ------------------------
+-   **Tweak*** Rename appsero-client to appsero
+
+v3.0.7 -> June 12, 2020
+------------------------
 -   **Fix*** Fatal error due to Appsero file not found
 
 v3.0.6 -> June 11, 2020
