@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Estimated Shipping Date 3.0.8\n"
+"Project-Id-Version: WooCommerce Estimated Shipping Date 4.0.0\n"
 "Report-Msgid-Bugs-To: https://saimonsplugins.com/contact/\n"
-"POT-Creation-Date: 2020-06-12 02:32:43+00:00\n"
+"POT-Creation-Date: 2020-06-12 07:48:35+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,73 +24,280 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: includes/admin/class-product-settings.php:51
+#: src/Engine.php:81
+msgid "%d products are completed out of %d"
+msgstr ""
+
+#: src/Engine.php:87
+msgid "WooCommerce estimated shipping date has been applied to all products."
+msgstr ""
+
+#: src/Product_Settings.php:37
 msgid "Enable WC Estimated Date"
 msgstr ""
 
-#: includes/admin/class-product-settings.php:52
+#: src/Product_Settings.php:38
 msgid "Enable or Disable WooCommerce estimated shipping date"
 msgstr ""
 
-#: includes/admin/class-product-settings.php:57
+#: src/Product_Settings.php:43 src/Settings.php:101
 msgid "Estimated Delivery Time in Days"
 msgstr ""
 
-#: includes/admin/class-product-settings.php:58
+#: src/Product_Settings.php:44 src/Settings.php:102
 msgid "Insert how many days it will take to deliver the product after purchase"
 msgstr ""
 
-#: includes/admin/class-product-settings.php:65
+#: src/Product_Settings.php:51 src/Settings.php:108
 msgid "Estimated Delivery Date Message"
 msgstr ""
 
-#: includes/admin/class-product-settings.php:66
+#: src/Product_Settings.php:52
 msgid "Insert your message"
 msgstr ""
 
-#: includes/admin/class-product-settings.php:68
-#: includes/public/class-public.php:72 includes/public/class-public.php:110
-#: includes/public/class-public.php:142 includes/public/class-public.php:176
+#: src/Product_Settings.php:54 src/views/Cart.php:27
+#: src/views/Single_Product.php:27 src/views/Thankyou.php:27
 msgid "Estimated Delivery Date"
 msgstr ""
 
-#: includes/admin/class-settings.php:56
+#: src/Settings.php:48
 msgid "Estimated Shipping Date"
 msgstr ""
 
-#: includes/admin/class-settings.php:56
+#: src/Settings.php:49
 msgid "Shipping Date"
 msgstr ""
 
-#: includes/admin/class-settings.php:63
+#: src/Settings.php:62
 msgid "WooCommerce Estimated Shipping Date Settings"
 msgstr ""
 
-#: includes/admin/class-settings.php:85
+#: src/Settings.php:85
 msgid "Enable"
 msgstr ""
 
-#: includes/admin/class-settings.php:86
+#: src/Settings.php:86
 msgid "Enable WooCommerce Estimated Shipping Date."
 msgstr ""
 
-#: includes/libs/settings-api.php:370
-msgid "Choose File"
+#: src/Settings.php:92
+msgid "Enable Shipping Date for All Existing Product"
 msgstr ""
 
-#: includes/public/class-public.php:83
-msgid "<strong class='shipping-date'> %s %s</strong>"
+#: src/Settings.php:93
+msgid ""
+"Enable Shipping for all existing product by default. If this option is not "
+"checked you will have to enable estimated shipping date for each individual "
+"product manually"
 msgstr ""
 
-#: includes/public/class-public.php:120 includes/public/class-public.php:152
-#: includes/public/class-public.php:186
+#: src/Settings.php:109
+msgid "Insert estimated delivery date message"
+msgstr ""
+
+#: src/Settings.php:120
+msgid "Enable Shipping Date for All Existing Products"
+msgstr ""
+
+#: src/Settings.php:122
+msgid ""
+"This tool will enable WooCommerce Estimated Shipping Date for all the "
+"existing products. It's helpful if you have lots of products, that you "
+"don't want to insert estimated shipping date for each and every product "
+"manually. Which is very time consuming."
+msgstr ""
+
+#: src/Settings.php:131
+msgid "Enable for All"
+msgstr ""
+
+#: src/views/Cart.php:31 src/views/Thankyou.php:31
 msgid "<strong>%s %s</strong>"
 msgstr ""
 
-#: woo-estimated-shipping-date.php:152
+#: src/views/Single_Product.php:32
+msgid "<strong class='shipping-date'> %s %s</strong>"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:38
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:20
+msgid "Basic Settings"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:42
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:24
+msgid "Advanced Settings"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:58
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:36
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:111
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:187
+msgid "Text Input"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:59
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:37
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:112
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:188
+msgid "Text input description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:60
+msgid "Text Input placeholder"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:67
+msgid "Number Input"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:68
+msgid "Number field with validation callback `floatval`"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:69
+msgid "1.99"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:79
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:43
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:118
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:194
+msgid "Textarea Input"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:80
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:44
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:119
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:195
+msgid "Textarea description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:81
+msgid "Textarea placeholder"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:86
 msgid ""
-"<b>WC Estimated Shipping Date</b> requires %sWooCommerce%s to be installed "
-"& activated!"
+"HTML area description. You can use any <strong>bold</strong> or other HTML "
+"elements."
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:91
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:49
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:124
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:200
+msgid "Checkbox"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:92
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:50
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:125
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:201
+msgid "Checkbox Label"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:97
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:55
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:130
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:206
+msgid "Radio Button"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:98
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:56
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:131
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:207
+msgid "A radio button"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:107
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:77
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:154
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:228
+msgid "A Dropdown"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:108
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:78
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:155
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:229
+msgid "Dropdown description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:118
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:144
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:88
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:164
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:238
+msgid "Password"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:119
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:145
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:89
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:165
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:239
+msgid "Password description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:125
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:95
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:171
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:245
+msgid "File"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:126
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:96
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:172
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:246
+msgid "File description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:137
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:102
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:178
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:252
+msgid "Color"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:138
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:103
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:179
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:253
+msgid "Color description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:151
+msgid "Advanced Editor"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:152
+msgid "WP_Editor description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:158
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:65
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:141
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:216
+msgid "Multile checkbox"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:159
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:66
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:142
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:217
+msgid "Multi checkbox description"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/example/procedural-example.php:28
+msgid "Other Settings"
+msgstr ""
+
+#: vendor/tareq1988/wordpress-settings-api-class/src/class.settings-api.php:370
+msgid "Choose File"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
