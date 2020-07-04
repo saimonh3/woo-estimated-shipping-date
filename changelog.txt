@@ -1,4 +1,4 @@
-v4.0.5 -> July 04, 2020
+v4.0.6 -> July 04, 2020
 ------------------------
 -   **Fix*** Shipping date is recalculated even after an order is placed
 
