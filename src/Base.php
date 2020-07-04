@@ -29,6 +29,7 @@ final class Base {
 			'product_settings' => new Product_Settings(),
 			'views'            => new Views(),
 			'engine'           => new Engine(),
+			'order'            => new Order(),
 		];
 
 		self::$controllers = apply_filters( 'saimon_wcesd_set_controllers', $controllers );
