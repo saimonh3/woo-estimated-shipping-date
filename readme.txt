@@ -47,6 +47,10 @@ You will have to set the estimated shipping date on the product edit page
 7. Email
 
 == Changelog ==
+v4.0.5 -> July 04, 2020
+------------------------
+-   **Fix*** Shipping date is recalculated even after an order is placed
+
 v4.0.1 -> June 12, 2020
 ------------------------
 -   **Feat*** Allow adding shipping date for all the product at once
