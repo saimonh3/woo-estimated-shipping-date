@@ -2,6 +2,10 @@
 
 namespace Saimon\WCESD;
 
+use DateInterval;
+use DatePeriod;
+use DateTime;
+
 defined( 'ABSPATH' ) || exit;
 
 class Helper {
@@ -14,6 +18,10 @@ class Helper {
 
 	public static function enabled_all_products() {
 		return 'on' === self::get_settings( 'wcesd_enable_all_products' );
+	}
+
+	public static function is_weekend_excluded() {
+		return 'on' === self::get_settings( 'wc_esd_exclude_weekend' );
 	}
 
 	public static function get_option( $key, $id = null, $return_single = true ) {
@@ -57,5 +65,22 @@ class Helper {
 
 	public static function get_admin_users() {
 		return self::get_author_ids_by_capability();
+	}
+
+	public static function get_weekend_count( $from, $to ) {
+		$period = new DatePeriod(
+			new DateTime( $from ),
+			new DateInterval( 'P1D' ),
+			new DateTime( $to )
+		);
+
+		$weekends = 0;
+		foreach ($period as $value) {
+			if ($value->format( 'N' ) >= 6) {
+				$weekends++;
+			}
+		}
+
+		return $weekends;
 	}
 }

@@ -27,6 +27,14 @@ class Thankyou {
 		$wc_esd_date_message = $wc_esd_date_message ? $wc_esd_date_message : __( 'Estimated Delivery Date', 'wcesd' );
 		$date                = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
+		if ( Helper::is_weekend_excluded() ) {
+			$from          = date_i18n( wc_date_format() );
+			$to            = $date;
+			$weekend_count = Helper::get_weekend_count( $from, $to );
+			$wc_esd_date   += $weekend_count;
+			$date          = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+		}
+
 		if ( is_view_order_page() ) {
 			$product_id     = $cart_item_key['product_id'];
 			$order          = wc_get_order( $cart_item_key['order_id'] );

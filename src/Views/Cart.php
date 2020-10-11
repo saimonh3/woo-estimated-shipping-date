@@ -27,6 +27,14 @@ class Cart {
 		$wc_esd_date_message = $wc_esd_date_message ? $wc_esd_date_message : __( 'Estimated Delivery Date', 'wcesd' );
 		$date                = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
+		if ( Helper::is_weekend_excluded() ) {
+			$from          = date_i18n( wc_date_format() );
+			$to            = $date;
+			$weekend_count = Helper::get_weekend_count( $from, $to );
+			$wc_esd_date   += $weekend_count;
+			$date          = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+		}
+
 		$cart_item .= '<br>';
 		$cart_item .= sprintf( wp_kses( __("<strong>%s %s</strong>", "wcesd" ), array( 'strong' => array() ) ), $wc_esd_date_message, $date );
 		$cart_item .= '</br>';
