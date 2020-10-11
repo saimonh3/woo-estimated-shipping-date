@@ -4,7 +4,7 @@ Tags: woocommerce, estimated shipping date, delivery date, estimated delivery da
 Requires at least: 4.0
 Tested up to: 5.4.2
 WC tested up to: 4.2.0
-Stable tag: 4.0.7
+Stable tag: 4.0.8
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -48,7 +48,7 @@ You will have to set the estimated shipping date on the product edit page
 
 == Changelog ==
 
-v4.0.7 -> Oct 11, 2020
+v4.0.8 -> Oct 11, 2020
 ------------------------
 -   **Fix*** Add option to exclude weekend from Shipping date calculation.
 -   **Fix*** Shipping date message border is broken if the text is long.

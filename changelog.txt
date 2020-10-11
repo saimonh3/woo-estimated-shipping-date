@@ -1,4 +1,4 @@
-v4.0.7 -> Oct 11, 2020
+v4.0.8 -> Oct 11, 2020
 ------------------------
 -   **Fix*** Add option to exclude weekend from Shipping date calculation.
 -   **Fix*** Shipping date message border is broken if the text is long.
