@@ -3,7 +3,7 @@
  * Plugin Name: WooCommerce Estimated Shipping Date
  * Description: A simple WooCommerce based plugin to show the estimated shipping date on the product, cart, checkout page
  * Author: Mohammed Saimon
- * Version: 4.0.6
+ * Version: 4.0.7
  * Tested up to: 5.4.2
  * WC requires at least:
  * WC tested up to: 4.2.0

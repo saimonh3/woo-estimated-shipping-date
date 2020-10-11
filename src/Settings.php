@@ -90,7 +90,7 @@ class Settings {
 				],
 				[
 					'label'   => __( 'Enable Shipping Date for All Existing Product', 'wcesd' ),
-					'desc'    => __( 'Enable Shipping for all existing product by default. If this option is not checked you will have to enable estimated shipping date for each individual product manually', 'wcesd' ),
+					'desc'    => __( 'Enable Shipping for all existing product by default. If this option is not checked you will have to enable estimated shipping date for each individual product manually.', 'wcesd' ),
 					'name'    => 'wcesd_enable_all_products',
 					'type'    => 'checkbox',
 					'options' => [ 'on', 'off' ],
@@ -99,14 +99,22 @@ class Settings {
 				[
 					'name'    => 'wc_esd_date_default',
 					'label'   => __( 'Estimated Delivery Time in Days', 'wcesd' ),
-					'desc'    => __( 'Insert how many days it will take to deliver the product after purchase', 'wcesd' ),
+					'desc'    => __( 'Insert how many days it will take to deliver the product after purchase.', 'wcesd' ),
 					'type'    => 'number',
 					'default' => 5
 				],
 				[
+					'name'    => 'wc_esd_exclude_weekend',
+					'label'   => __( 'Exclude Weekend', 'wcesd' ),
+					'desc'    => __( 'Exclude weekend from the shipping date calculation.', 'wcesd' ),
+					'type'    => 'checkbox',
+					'options' => [ 'on', 'off' ],
+					'default' => 'on'
+				],
+				[
 					'name'    => 'wc_esd_date_message_default',
 					'label'   => __( 'Estimated Delivery Date Message', 'wcesd' ),
-					'desc'    => __( 'Insert estimated delivery date message', 'wcesd' ),
+					'desc'    => __( 'Insert estimated delivery date message.', 'wcesd' ),
 					'type'    => 'text',
 					'default' => 'Estimated Delivery Date',
 				],

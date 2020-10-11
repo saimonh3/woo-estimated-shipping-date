@@ -47,6 +47,12 @@ You will have to set the estimated shipping date on the product edit page
 7. Email
 
 == Changelog ==
+
+v4.0.7 -> Oct 11, 2020
+------------------------
+-   **Fix*** Add option to exclude weekend from Shipping date calculation.
+-   **Fix*** Shipping date message border is broken if the text is long.
+
 v4.0.5 -> July 04, 2020
 ------------------------
 -   **Fix*** Shipping date is recalculated even after an order is placed

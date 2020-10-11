@@ -42,8 +42,17 @@ class Order {
 
 			$wc_esd_date = Helper::get_option( 'wc_esd_date', $product_id );
 			$wc_esd_date = $wc_esd_date ? $wc_esd_date : 5;
-			$date        = strtotime( '+' . $wc_esd_date . 'days' );
+			$date        = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
+			if ( Helper::is_weekend_excluded() ) {
+				$from          = date_i18n( wc_date_format() );
+				$to            = $date;
+				$weekend_count = Helper::get_weekend_count( $from, $to );
+				$wc_esd_date   += $weekend_count;
+				$date          = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+			}
+
+			$date = strtotime( $date );
 			$order->update_meta_data( self::DATE_FOR_ORDER . $product_id, $date );
 		}
 

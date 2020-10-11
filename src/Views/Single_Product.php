@@ -21,18 +21,28 @@ class Single_Product {
 			return;
 		}
 
-		$wc_esd_date         = Helper::get_option( 'wc_esd_date' );
-		$wc_esd_date         = $wc_esd_date ? $wc_esd_date : 5;
-		$wc_esd_date_message = Helper::get_option( 'wc_esd_date_message' );
-		$wc_esd_date_message = $wc_esd_date_message ? $wc_esd_date_message : __( 'Estimated Delivery Date', 'wcesd' );
-		$date                = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+		$wc_esd_date            = Helper::get_option( 'wc_esd_date' );
+		$wc_esd_date            = $wc_esd_date ? $wc_esd_date : 5;
+		$wc_esd_date_message    = Helper::get_option( 'wc_esd_date_message' );
+		$wc_esd_date_message    = $wc_esd_date_message ? $wc_esd_date_message : __( 'Estimated Delivery Date', 'wcesd' );
+		$date                   = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
-		printf(
-			wp_kses(
-				__( "<strong class='shipping-date'> %s %s</strong>", "wcesd" ),
-				array( 'strong' => array( 'class' => true ) )
-			),
-			$wc_esd_date_message, $date
+		if ( Helper::is_weekend_excluded() ) {
+			$from          = date_i18n( wc_date_format() );
+			$to            = $date;
+			$weekend_count = Helper::get_weekend_count( $from, $to );
+			$wc_esd_date   += $weekend_count;
+			$date          = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+		}
+
+		$html = '<div class="wesd-box">';
+		$html .= '<strong class="shipper-date">';
+		$html .= $wc_esd_date_message . ' ' . $date;
+		$html .= '</strong>';
+		$html .= '</div>';
+
+		echo wp_kses_post(
+			$html
 		);
 	}
 }

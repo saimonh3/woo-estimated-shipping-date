@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Estimated Shipping Date 4.0.6\n"
+"Project-Id-Version: WooCommerce Estimated Shipping Date 4.0.7\n"
 "Report-Msgid-Bugs-To: https://saimonsplugins.com/contact/\n"
-"POT-Creation-Date: 2020-07-04 08:00:54+00:00\n"
+"POT-Creation-Date: 2020-10-11 07:46:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -44,11 +44,11 @@ msgstr ""
 msgid "Estimated Delivery Time in Days"
 msgstr ""
 
-#: src/Product_Settings.php:44 src/Settings.php:102
+#: src/Product_Settings.php:44
 msgid "Insert how many days it will take to deliver the product after purchase"
 msgstr ""
 
-#: src/Product_Settings.php:51 src/Settings.php:108
+#: src/Product_Settings.php:51 src/Settings.php:116
 msgid "Estimated Delivery Date Message"
 msgstr ""
 
@@ -89,18 +89,30 @@ msgstr ""
 msgid ""
 "Enable Shipping for all existing product by default. If this option is not "
 "checked you will have to enable estimated shipping date for each individual "
-"product manually"
+"product manually."
+msgstr ""
+
+#: src/Settings.php:102
+msgid "Insert how many days it will take to deliver the product after purchase."
+msgstr ""
+
+#: src/Settings.php:108
+msgid "Exclude Weekend"
 msgstr ""
 
 #: src/Settings.php:109
-msgid "Insert estimated delivery date message"
+msgid "Exclude weekend from the shipping date calculation."
 msgstr ""
 
-#: src/Settings.php:120
+#: src/Settings.php:117
+msgid "Insert estimated delivery date message."
+msgstr ""
+
+#: src/Settings.php:128
 msgid "Enable Shipping Date for All Existing Products"
 msgstr ""
 
-#: src/Settings.php:122
+#: src/Settings.php:130
 msgid ""
 "This tool will enable WooCommerce Estimated Shipping Date for all the "
 "existing products. It's helpful if you have lots of products, that you "
@@ -108,16 +120,12 @@ msgid ""
 "manually. Which is very time consuming."
 msgstr ""
 
-#: src/Settings.php:131
+#: src/Settings.php:139
 msgid "Enable for All"
 msgstr ""
 
-#: src/Views/Cart.php:31 src/Views/Thankyou.php:43
+#: src/Views/Cart.php:39 src/Views/Thankyou.php:51
 msgid "<strong>%s %s</strong>"
-msgstr ""
-
-#: src/Views/Single_Product.php:32
-msgid "<strong class='shipping-date'> %s %s</strong>"
 msgstr ""
 
 #: vendor/tareq1988/wordpress-settings-api-class/example/oop-example.php:38
