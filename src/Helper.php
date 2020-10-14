@@ -5,6 +5,7 @@ namespace Saimon\WCESD;
 use DateInterval;
 use DatePeriod;
 use DateTime;
+use Exception;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -68,19 +69,61 @@ class Helper {
 	}
 
 	public static function get_weekend_count( $from, $to ) {
-		$period = new DatePeriod(
-			new DateTime( $from ),
-			new DateInterval( 'P1D' ),
-			new DateTime( $to )
-		);
+		$begin    = new DateTime( gmdate( 'Y-m-d H:i:s', $from ) );
+		$interval = new DateInterval( 'P1D' );
+		$end      = new DateTime( gmdate( 'Y-m-d H:i:s', $to ) );
+		error_log( print_r( $end, true ) );
+		$end->modify( '+1 day' );
+
+		try {
+			$period = new DatePeriod( $begin, $interval, $end );
+		} catch ( Exception $e ) {
+			return 0;
+		}
 
 		$weekends = 0;
 		foreach ($period as $value) {
-			if ($value->format( 'N' ) >= 6) {
+			error_log( print_r( $value->format('l'), true ) );
+			if ($value->format( 'N' ) >= 6 ) {
 				$weekends++;
 			}
 		}
 
+//		error_log( print_r( $period, true ) );
+		error_log( print_r( $weekends, true ) );
+
 		return $weekends;
+	}
+
+	public static function get_next_business_day( $date ) {
+		$date = new DateTime( gmdate( 'Y-m-d H:i:s', strtotime( $date ) ) );
+		static $count = 0;
+		if ( $date->format('N') < 6 ) {
+			error_log( print_r( ['count', $count], true ) );
+			return $date->format( self::get_date_format( 'date' ) );
+		}
+		$count ++;
+		return self::get_next_business_day( $date->modify( '+1 day' )->format( 'Y-m-d H:i:s' ) );
+	}
+
+	public static function get_date_format( $format = null ) {
+		$date_format = get_option( 'date_format', 'Y-m-d' );
+		$time_fromat = get_option( 'time_format', 'H:i:s' );
+
+		$date_time_format = '';
+
+		if ( 'date' === $format ) {
+			$date_time_format = $date_format;
+		}
+
+		if ( 'time' === $format ) {
+			$date_time_format = $time_fromat;
+		}
+
+		if ( is_null( $format ) ) {
+			$date_time_format = $date_format . ' ' . $time_fromat;
+		}
+
+		return apply_filters( 'wesd_get_date_format', $date_time_format );
 	}
 }

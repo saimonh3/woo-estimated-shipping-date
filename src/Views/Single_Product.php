@@ -25,14 +25,15 @@ class Single_Product {
 		$wc_esd_date            = $wc_esd_date ? $wc_esd_date : 5;
 		$wc_esd_date_message    = Helper::get_option( 'wc_esd_date_message' );
 		$wc_esd_date_message    = $wc_esd_date_message ? $wc_esd_date_message : __( 'Estimated Delivery Date', 'wcesd' );
-		$date                   = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+		$date                   = date_i18n( Helper::get_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
 
 		if ( Helper::is_weekend_excluded() ) {
-			$from          = date_i18n( wc_date_format() );
-			$to            = $date;
+			$from          = strtotime( current_time( 'mysql' ) );
+			$to            = strtotime( $date );
 			$weekend_count = Helper::get_weekend_count( $from, $to );
 			$wc_esd_date   += $weekend_count;
-			$date          = date_i18n( wc_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+			$date          = date_i18n( Helper::get_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+			$date          = Helper::get_next_business_day( $date );
 		}
 
 		$html = '<div class="wesd-box">';
