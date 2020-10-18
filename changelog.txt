@@ -1,3 +1,7 @@
+v4.2.0 -> Oct 18, 2020
+------------------------
+-   **Feat*** Add shipping date range option.
+
 v4.1.1 -> Oct 18, 2020
 ------------------------
 -   **Fix*** Shipping date calculation.
