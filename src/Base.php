@@ -5,7 +5,7 @@ namespace Saimon\WCESD;
 defined( 'ABSPATH' ) || exit;
 
 final class Base {
-	const VERSION = '4.0.7';
+	const VERSION = '4.1.1';
 
 	private static $controllers = [];
 

@@ -2,9 +2,9 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: WooCommerce Estimated Shipping Date 4.1.0\n"
+"Project-Id-Version: WooCommerce Estimated Shipping Date 4.1.1\n"
 "Report-Msgid-Bugs-To: https://saimonsplugins.com/contact/\n"
-"POT-Creation-Date: 2020-10-11 08:22:03+00:00\n"
+"POT-Creation-Date: 2020-10-18 06:32:48+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -56,8 +56,8 @@ msgstr ""
 msgid "Insert your message"
 msgstr ""
 
-#: src/Product_Settings.php:54 src/Views/Cart.php:27
-#: src/Views/Single_Product.php:27 src/Views/Thankyou.php:27
+#: src/Product_Settings.php:54 src/Views/Cart.php:34
+#: src/Views/Single_Product.php:28 src/Views/Thankyou.php:32
 msgid "Estimated Delivery Date"
 msgstr ""
 
@@ -124,7 +124,7 @@ msgstr ""
 msgid "Enable for All"
 msgstr ""
 
-#: src/Views/Cart.php:39 src/Views/Thankyou.php:51
+#: src/Views/Cart.php:46 src/Views/Thankyou.php:56
 msgid "<strong>%s %s</strong>"
 msgstr ""
 

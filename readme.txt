@@ -4,7 +4,7 @@ Tags: woocommerce, estimated shipping date, delivery date, estimated delivery da
 Requires at least: 4.0
 Tested up to: 5.4.2
 WC tested up to: 4.2.0
-Stable tag: 4.1.0
+Stable tag: 4.1.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -47,6 +47,10 @@ You will have to set the estimated shipping date on the product edit page
 7. Email
 
 == Changelog ==
+
+v4.1.1 -> Oct 18, 2020
+------------------------
+-   **Fix*** Shipping date calculation.
 
 v4.1.0 -> Oct 11, 2020
 ------------------------
