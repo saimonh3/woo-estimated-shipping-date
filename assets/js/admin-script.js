@@ -20,7 +20,7 @@
             total_products : total_products
         };
 
-        $.post( wcesd_pro.ajaxurl, s_data, function(resp) {
+        $.post( wcesd.ajaxurl, s_data, function(resp) {
             if ( resp.success ) {
                 if( resp.data.total_products != 0 ){
                     total_products = resp.data.total_products;
@@ -46,7 +46,6 @@
                     submit.trigger('click');
                     return;
                 } else {
-                    console.log('all done');
                     submit.removeAttr('disabled');
                     loader.hide();
                 }
@@ -55,6 +54,7 @@
     });
 
     const enable_for_all = $('#wpuf-wcesd_settings\\[wcesd_enable_all_products\\]');
+    const enable_date_range = $('#wpuf-wcesd_settings\\[wc_esd_enable_date_range\\]');
 
     enable_for_all.on('change', function(e) {
         const self = $(this);
@@ -66,6 +66,21 @@
             postbox.fadeOut();
         }
     });
+
+    enable_date_range.on('change', function(e) {
+        const self = $(this);
+        const date_range_gap = $('.wc_esd_date_range_gap');
+
+        if ( self.is(':checked') ) {
+            date_range_gap.fadeIn();
+        } else {
+            date_range_gap.fadeOut();
+        }
+    });
+
+    if ( ! enable_date_range.is(':checked') ) {
+        $('.wc_esd_date_range_gap').hide();
+    }
 
     if ( ! enable_for_all.is(':checked') ) {
         $('.postbox').hide();

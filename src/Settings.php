@@ -34,7 +34,7 @@ class Settings {
 
 		wp_enqueue_style( 'wcesd-admin-style', WC_ESD_ASSETS . 'css/admin-style.css', null, time(), 'all' );
 		wp_enqueue_script( 'wcesd-admin-script', WC_ESD_ASSETS . 'js/admin-script.js', [ 'jquery' ], time(), true );
-		wp_localize_script( 'wcesd-admin-script', 'wcesd_pro', [ 'ajaxurl' => admin_url( 'admin-ajax.php' ) ] );
+		wp_localize_script( 'wcesd-admin-script', 'wcesd', [ 'ajaxurl' => admin_url( 'admin-ajax.php' ) ] );
 	}
 
 	public function admin_init() {
@@ -114,7 +114,7 @@ class Settings {
 				[
 					'name'    => 'wc_esd_enable_date_range',
 					'label'   => __( 'Enable Date Range', 'wcesd' ),
-					'desc'    => __( 'Enable shipping date range between two date.', 'wcesd' ),
+					'desc'    => __( 'Enable shipping date range between two dates.', 'wcesd' ),
 					'type'    => 'checkbox',
 					'options' => [ 'on', 'off' ],
 					'default' => 'on'
@@ -122,7 +122,7 @@ class Settings {
 				[
 					'name'    => 'wc_esd_date_range_gap',
 					'label'   => __( 'Date Rage Gap', 'wcesd' ),
-					'desc'    => __( 'Number of days for max date range.', 'wcesd' ),
+					'desc'    => __( 'Number of days between two dates.', 'wcesd' ),
 					'type'    => 'number',
 					'default' => '2'
 				],
