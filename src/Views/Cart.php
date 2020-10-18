@@ -33,17 +33,31 @@ class Cart {
 		$wc_esd_date_message = Helper::get_option( 'wc_esd_date_message', $cart_item_key['product_id'] );
 		$wc_esd_date_message = $wc_esd_date_message ? $wc_esd_date_message : __( 'Estimated Delivery Date', 'wcesd' );
 		$today               = strtotime( current_time( 'mysql' ) );
+		$to_date             = '';
 
 		if ( Helper::is_weekend_excluded() ) {
 			$date = ( new Date_Calculator( $today, $wc_esd_date ) )->get_date();
+
+			if ( Helper::is_date_range_enabled() ) {
+				$wc_esd_date = $wc_esd_date + Helper::get_date_range_gap();
+				$to_date = ( new Date_Calculator( $today, $wc_esd_date ) )->get_date();
+			}
 		} else {
 			$date = ( new Date_Calculator( $today, $wc_esd_date, false ) )->get_date();
+
+			if ( Helper::is_date_range_enabled() ) {
+				$wc_esd_date = $wc_esd_date + Helper::get_date_range_gap();
+				$to_date = ( new Date_Calculator( $today, $wc_esd_date ) )->get_date();
+			}
 		}
 
-		$date = Helper::display_date( $date );
-
+		if ( ! empty( $to_date ) ) {
+			$message = $wc_esd_date_message . ' ' . Helper::display_date( $date ) . ' - ' . Helper::display_date( $to_date );
+		} else {
+			$message = $wc_esd_date_message . ' ' . Helper::display_date( $date );
+		}
 		$cart_item .= '<br>';
-		$cart_item .= sprintf( wp_kses( __("<strong>%s %s</strong>", "wcesd" ), array( 'strong' => array() ) ), $wc_esd_date_message, $date );
+		$cart_item .= sprintf( wp_kses( __("<strong>%s</strong>", "wcesd" ), array( 'strong' => array() ) ), $message );
 		$cart_item .= '</br>';
 
 		return $cart_item;

@@ -112,6 +112,21 @@ class Settings {
 					'default' => 'on'
 				],
 				[
+					'name'    => 'wc_esd_enable_date_range',
+					'label'   => __( 'Enable Date Range', 'wcesd' ),
+					'desc'    => __( 'Enable shipping date range between two date.', 'wcesd' ),
+					'type'    => 'checkbox',
+					'options' => [ 'on', 'off' ],
+					'default' => 'on'
+				],
+				[
+					'name'    => 'wc_esd_date_range_gap',
+					'label'   => __( 'Date Rage Gap', 'wcesd' ),
+					'desc'    => __( 'Number of days for max date range.', 'wcesd' ),
+					'type'    => 'number',
+					'default' => '2'
+				],
+				[
 					'name'    => 'wc_esd_date_message_default',
 					'label'   => __( 'Estimated Delivery Date Message', 'wcesd' ),
 					'desc'    => __( 'Insert estimated delivery date message.', 'wcesd' ),

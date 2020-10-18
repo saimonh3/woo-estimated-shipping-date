@@ -32,6 +32,20 @@ class Helper {
 	}
 
 	/**
+	 * @return bool
+	 */
+	public static function is_date_range_enabled() {
+		return 'on' === self::get_settings( 'wc_esd_enable_date_range' );
+	}
+
+	/**
+	 * @return int
+	 */
+	public static function get_date_range_gap() {
+		return (int) self::get_settings( 'wc_esd_date_range_gap' );
+	}
+
+	/**
 	 * @param $key
 	 * @param null $id
 	 * @param bool $return_single
