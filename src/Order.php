@@ -42,18 +42,15 @@ class Order {
 
 			$wc_esd_date = Helper::get_option( 'wc_esd_date', $product_id );
 			$wc_esd_date = $wc_esd_date ? $wc_esd_date : 5;
-			$date        = date_i18n( Helper::get_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+			$today       = strtotime( current_time( 'mysql' ) );
 
 			if ( Helper::is_weekend_excluded() ) {
-				$from          = strtotime( current_time( 'mysql' ) );
-				$to            = strtotime( $date );
-				$weekend_count = Helper::get_weekend_count( $from, $to );
-				$wc_esd_date   += $weekend_count;
-				$date          = date_i18n( Helper::get_date_format(), strtotime( '+' . $wc_esd_date . 'days' ) );
+				$date = ( new Date_Calculator( $today, $wc_esd_date ) )->get_date();
+			} else {
+				$date = ( new Date_Calculator( $today, $wc_esd_date, false ) )->get_date();
 			}
 
-			$date = strtotime( $date );
-			$order->update_meta_data( self::DATE_FOR_ORDER . $product_id, $date );
+			$order->update_meta_data( self::DATE_FOR_ORDER . $product_id, strtotime( $date ) );
 		}
 
 		$order->update_meta_data( self::ORDER_PLACED, true );
